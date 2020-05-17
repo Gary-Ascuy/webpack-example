@@ -3,27 +3,30 @@ const webpack = require('webpack')
 
 module.exports = {
   mode: "development",
-  entry: {
-    "bundle": [
-      'webpack-hot-middleware/client',
-      './src/app.js'
-    ]
-  }
-  ,
+  entry: './src/app.ts',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    library: 'gary',
+    path: path.resolve(__dirname, 'build'),
+    publicPath: "/assets/",
     filename: 'bundle.js',
+  },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ],
   },
   devServer: {
     contentBase: path.join(__dirname, '.'),
     port: 9000,
-    inline: true,
-    hot: true,
     watchOptions: {
       ignored: /node_modules/
     }
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  }
 }

@@ -1,15 +1,38 @@
 <html>
-  <head>
+<head>
+  <style>
+    button {
+      font-size: 40px;
+      border-radius: 10px;
+      margin: 10px 20px;
+    }
+    .main.message.background {
+      border: 1px dashed gray;
+      background-color: darkcyan;
+    }
+    .main.message.foreground {
+      color: crimson;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .main.message {
+      background-color: cornflowerblue;
+      padding: 20px;
+      font-size: 30px;
+      margin: 20px 30%;
+    }
+  </style>
+  <script src="/webpack-dev-server.js"></script>
+</head>
 
-  </head>
-  <body>
-    <div style="text-align: center;">
-      gary
-    <button onclick="console.log('body s  sasdamessage')">
-      CLICK ME!
-    </button>
-    <script src="dist/bundle.js"></script>
-    <!-- built files will be auto injected -->
-    </div>
-  </body>
+<body>
+  <div style="text-align: center;">
+    <button onclick="gary.toggleBg()">BG</button>
+    <button onclick="gary.incCounter()">CLICK ME!</button>
+    <button onclick="gary.toggleFg()">FG</button>
+    <div class="main message">0</div>
+    <script src="/assets/bundle.js"></script>
+  </div>
+</body>
+
 </html>
