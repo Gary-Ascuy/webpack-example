@@ -1,0 +1,20 @@
+{
+  "name": "webpack-example",
+  "version": "1.0.0",
+  "description": "Webpack Config Example",
+  "main": "src/app.js",
+  "scripts": {
+    "build": "webpack",
+    "build:prod": "webpack -p"
+  },
+  "keywords": [
+    "webpack",
+    "config",
+    "nodejs"
+  ],
+  "author": "Gary Ascuy <gary.ascuy@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.43.0"
+  }
+}
